@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23F1A4F034B55F6519BABA38 /* Pods_SwiftSkillUpAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEF899717E43D1CADFD7402 /* Pods_SwiftSkillUpAPI.framework */; };
 		2574AD96236C401C000FE4D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AD95236C401C000FE4D6 /* AppDelegate.swift */; };
 		2574AD98236C401C000FE4D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AD97236C401C000FE4D6 /* SceneDelegate.swift */; };
 		2574AD9A236C401C000FE4D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574AD99236C401C000FE4D6 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		2574AD9E236C401C000FE4D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2574ADA1236C401C000FE4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2574ADA3236C401C000FE4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AEF899717E43D1CADFD7402 /* Pods_SwiftSkillUpAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSkillUpAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D731BE69CA557B8D7D4000DA /* Pods-SwiftSkillUpAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSkillUpAPI.release.xcconfig"; path = "Target Support Files/Pods-SwiftSkillUpAPI/Pods-SwiftSkillUpAPI.release.xcconfig"; sourceTree = "<group>"; };
+		EA2994F6BAD71905C982A300 /* Pods-SwiftSkillUpAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSkillUpAPI.debug.xcconfig"; path = "Target Support Files/Pods-SwiftSkillUpAPI/Pods-SwiftSkillUpAPI.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23F1A4F034B55F6519BABA38 /* Pods_SwiftSkillUpAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				2574AD94236C401C000FE4D6 /* SwiftSkillUpAPI */,
 				2574AD93236C401C000FE4D6 /* Products */,
+				CB60E648492AA8086FFE0926 /* Pods */,
+				B126BCE488BE7229D6236BAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = SwiftSkillUpAPI;
 			sourceTree = "<group>";
 		};
+		B126BCE488BE7229D6236BAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AEF899717E43D1CADFD7402 /* Pods_SwiftSkillUpAPI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB60E648492AA8086FFE0926 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA2994F6BAD71905C982A300 /* Pods-SwiftSkillUpAPI.debug.xcconfig */,
+				D731BE69CA557B8D7D4000DA /* Pods-SwiftSkillUpAPI.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2574ADA6236C401C000FE4D6 /* Build configuration list for PBXNativeTarget "SwiftSkillUpAPI" */;
 			buildPhases = (
+				25CF7D8B6A8DD971F9BBBE7D /* [CP] Check Pods Manifest.lock */,
 				2574AD8E236C401B000FE4D6 /* Sources */,
 				2574AD8F236C401B000FE4D6 /* Frameworks */,
 				2574AD90236C401B000FE4D6 /* Resources */,
+				45DB5386EBD4C15DAADED835 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25CF7D8B6A8DD971F9BBBE7D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftSkillUpAPI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45DB5386EBD4C15DAADED835 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftSkillUpAPI/Pods-SwiftSkillUpAPI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwiftSkillUpAPI/Pods-SwiftSkillUpAPI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftSkillUpAPI/Pods-SwiftSkillUpAPI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2574AD8E236C401B000FE4D6 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		2574ADA7236C401C000FE4D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA2994F6BAD71905C982A300 /* Pods-SwiftSkillUpAPI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		2574ADA8236C401C000FE4D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D731BE69CA557B8D7D4000DA /* Pods-SwiftSkillUpAPI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
