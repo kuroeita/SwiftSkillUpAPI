@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		2574AD9D236C401C000FE4D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2574AD9B236C401C000FE4D6 /* Main.storyboard */; };
 		2574AD9F236C401C000FE4D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2574AD9E236C401C000FE4D6 /* Assets.xcassets */; };
 		2574ADA2236C401C000FE4D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2574ADA0236C401C000FE4D6 /* LaunchScreen.storyboard */; };
+		2574ADAA236C44E5000FE4D6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574ADA9236C44E5000FE4D6 /* API.swift */; };
+		2574ADAC23700BCB000FE4D6 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574ADAB23700BCB000FE4D6 /* ListTableViewController.swift */; };
+		2574ADAF23700CD3000FE4D6 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2574ADAD23700CD3000FE4D6 /* SongTableViewCell.swift */; };
+		2574ADB023700CD3000FE4D6 /* SongTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2574ADAE23700CD3000FE4D6 /* SongTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,10 @@
 		2574AD9E236C401C000FE4D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2574ADA1236C401C000FE4D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2574ADA3236C401C000FE4D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2574ADA9236C44E5000FE4D6 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		2574ADAB23700BCB000FE4D6 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		2574ADAD23700CD3000FE4D6 /* SongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		2574ADAE23700CD3000FE4D6 /* SongTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableViewCell.xib; sourceTree = "<group>"; };
 		2AEF899717E43D1CADFD7402 /* Pods_SwiftSkillUpAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftSkillUpAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D731BE69CA557B8D7D4000DA /* Pods-SwiftSkillUpAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSkillUpAPI.release.xcconfig"; path = "Target Support Files/Pods-SwiftSkillUpAPI/Pods-SwiftSkillUpAPI.release.xcconfig"; sourceTree = "<group>"; };
 		EA2994F6BAD71905C982A300 /* Pods-SwiftSkillUpAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftSkillUpAPI.debug.xcconfig"; path = "Target Support Files/Pods-SwiftSkillUpAPI/Pods-SwiftSkillUpAPI.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,15 +71,27 @@
 		2574AD94236C401C000FE4D6 /* SwiftSkillUpAPI */ = {
 			isa = PBXGroup;
 			children = (
+				2574ADB123700CDB000FE4D6 /* cellgolup */,
 				2574AD95236C401C000FE4D6 /* AppDelegate.swift */,
 				2574AD97236C401C000FE4D6 /* SceneDelegate.swift */,
 				2574AD99236C401C000FE4D6 /* ViewController.swift */,
+				2574ADA9236C44E5000FE4D6 /* API.swift */,
 				2574AD9B236C401C000FE4D6 /* Main.storyboard */,
+				2574ADAB23700BCB000FE4D6 /* ListTableViewController.swift */,
 				2574AD9E236C401C000FE4D6 /* Assets.xcassets */,
 				2574ADA0236C401C000FE4D6 /* LaunchScreen.storyboard */,
 				2574ADA3236C401C000FE4D6 /* Info.plist */,
 			);
 			path = SwiftSkillUpAPI;
+			sourceTree = "<group>";
+		};
+		2574ADB123700CDB000FE4D6 /* cellgolup */ = {
+			isa = PBXGroup;
+			children = (
+				2574ADAD23700CD3000FE4D6 /* SongTableViewCell.swift */,
+				2574ADAE23700CD3000FE4D6 /* SongTableViewCell.xib */,
+			);
+			path = cellgolup;
 			sourceTree = "<group>";
 		};
 		B126BCE488BE7229D6236BAE /* Frameworks */ = {
@@ -88,7 +108,6 @@
 				EA2994F6BAD71905C982A300 /* Pods-SwiftSkillUpAPI.debug.xcconfig */,
 				D731BE69CA557B8D7D4000DA /* Pods-SwiftSkillUpAPI.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -152,6 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2574ADB023700CD3000FE4D6 /* SongTableViewCell.xib in Resources */,
 				2574ADA2236C401C000FE4D6 /* LaunchScreen.storyboard in Resources */,
 				2574AD9F236C401C000FE4D6 /* Assets.xcassets in Resources */,
 				2574AD9D236C401C000FE4D6 /* Main.storyboard in Resources */,
@@ -207,8 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2574ADAF23700CD3000FE4D6 /* SongTableViewCell.swift in Sources */,
 				2574AD9A236C401C000FE4D6 /* ViewController.swift in Sources */,
 				2574AD96236C401C000FE4D6 /* AppDelegate.swift in Sources */,
+				2574ADAA236C44E5000FE4D6 /* API.swift in Sources */,
+				2574ADAC23700BCB000FE4D6 /* ListTableViewController.swift in Sources */,
 				2574AD98236C401C000FE4D6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
