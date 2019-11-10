@@ -9,60 +9,53 @@
 import UIKit
 import Moya
 
-class ListTableViewController: UITableViewController {
+class ListTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    private var results: [NSDictionary]?
-
+    var resultsCount: [NestTitle] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
 
         self.tableView.register(UINib(nibName: "SongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongTableViewCell")
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+
+
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+
+        let inText = searchBar.text!
+
         let provider = MoyaProvider<ITunesAPI>()
-        provider.request( .artistName(request: ["artistName": "ビートルズ"])) { results in
+        provider.request( .searchInformation(term: "\(inText)")) { results in
             switch results {
             case let .success(moyaResponse):
-                let jsonData = try? JSONDecoder().decode(Address.self, from: moyaResponse.data)
-                dump(jsonData!)
+                let jsonData = try? JSONDecoder().decode(NestTitle.self, from: moyaResponse.data)
+                //dump(jsonData!)
+                print(jsonData)
             case let .failure(error):
                 print("アクセスに失敗しました:\(error)")
 
-
-
-//                do {
-//                    let date = try moyaResponse.mapJSON()
-//                    print(date)
-//                    let jsonDate = try? JSONDecoder().decode(SoundInformation.self, from: moyaResponse.data)
-//                    print(jsonDate!.artistName)
-//                }
-//                catch {
-//                    print("json prese失敗")
-//                }
-//            case let .failure(error):
-//                print("アクセスに失敗しました:\(error)")
             }
 
         }
 
     }
 
-    // MARK: - Table view data source
+
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return resultsCount.count
     }
 
     /*

@@ -9,7 +9,9 @@
 import Foundation
 import Moya
 
-class Address: Codable {
+
+// レスポンスの型
+struct NestTitle: Codable {
     var resultCount: Int
     var results: [Result]?
 }
@@ -18,21 +20,26 @@ struct Result: Codable {
     var artistName: String
     var trackName: String
 }
-
+//
 
 enum ITunesAPI {
-    case artistName(request: Dictionary<String, Any>)
+    case searchInformation(term: String)
 }
 
 extension ITunesAPI: TargetType {
    var baseURL:URL {
-        return URL(string: "https://itunes.apple.com/search?term=beatles&country=JP&lang=ja_jp&media=music")!
+        return URL(string:"https://itunes.apple.com")!
     }
+
+    // "https://itunes.apple.com/search?term=\(searchText)&country=JP&lang=ja_jp&media=music"
+    //BaseURLはあくまでもベースであり、後ろのKey/valueは下記で設定していく
+
 
     var path: String {
         switch self {
-        case .artistName:
-            return "/artistName"
+        case .searchInformation:
+            return "/search"
+            //Keyを指定する
         }
     }
 
@@ -45,7 +52,17 @@ extension ITunesAPI: TargetType {
     }
 
     var task: Task {
-        return .requestPlain
+        switch self {
+        case .searchInformation(let request):
+            var params: [String: Any] = [:]
+            params["term"] = request
+            params["lang"] = "ja_jp"
+            params["country"] = "JP"
+            //searchInformationはKey/valueをみるところ/パラメーター
+
+            return .requestParameters(parameters: params, encoding: URLEncoding.default)
+        }
+
     }
 
     var headers: [String : String]? {
