@@ -12,9 +12,12 @@ import Moya
 class ListTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    var resultsCount: [NestTitle] = []
+    var resultsCount: NestTitle?
+    //3.変換した値を見ている、NestTitleが型であることを明示
+    var titleString: String?
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         searchBar.delegate = self
 
@@ -24,25 +27,30 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
 
-
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
 
         let inText = searchBar.text!
 
         let provider = MoyaProvider<ITunesAPI>()
-        provider.request( .searchInformation(term: "\(inText)")) { results in
+        provider.request( .searchInformation(term: "\(inText)")) { [weak self] results in
             switch results {
             case let .success(moyaResponse):
                 let jsonData = try? JSONDecoder().decode(NestTitle.self, from: moyaResponse.data)
-                //dump(jsonData!)
-                print(jsonData)
+                //1.ここのクロージャー内でjsonデータを取得してNestTitleの型通りに変換するよっていつのをcodbleで実装
+                self?.resultsCount = jsonData
+                //2.変換した値をresultskCountに入れている
+
+                self?.tableView.reloadData()
+
+
             case let .failure(error):
                 print("アクセスに失敗しました:\(error)")
 
             }
 
         }
+
 
     }
 
@@ -55,18 +63,22 @@ class ListTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return resultsCount.count
+        return resultsCount?.results?.count ?? 0
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SongTableViewCell") as? SongTableViewCell else {
+            return SongTableViewCell()
+        }
+        guard let info = resultsCount?.results?[indexPath.row] else {
+             return SongTableViewCell()
+        }
+        cell.setup(set: info)
 
-        // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

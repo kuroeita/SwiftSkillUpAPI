@@ -19,6 +19,11 @@ struct NestTitle: Codable {
 struct Result: Codable {
     var artistName: String
     var trackName: String
+
+    init(_ artist: String, _ track: String) {
+        self.artistName = artist
+        self.trackName = track
+    }
 }
 //
 

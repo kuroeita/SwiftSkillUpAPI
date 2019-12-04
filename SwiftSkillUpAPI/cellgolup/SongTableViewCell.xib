@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKe-bj-KJ4">
-                        <rect key="frame" x="65" y="5" width="42" height="34"/>
+                        <rect key="frame" x="60" y="3" width="42" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -28,17 +28,33 @@
                             <constraint firstAttribute="width" constant="40" id="8lC-hb-DWS"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaa-2d-SXt">
+                        <rect key="frame" x="60" y="26" width="42" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Xvf-do-H87"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="fKe-bj-KJ4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="73q-vo-h7W"/>
+                    <constraint firstAttribute="bottom" secondItem="iaa-2d-SXt" secondAttribute="bottom" constant="3" id="IAs-dJ-Rbs"/>
                     <constraint firstAttribute="bottom" secondItem="i0S-PK-zVi" secondAttribute="bottom" constant="7" id="KI2-tc-UJx"/>
                     <constraint firstItem="i0S-PK-zVi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="UEv-iB-mcp"/>
-                    <constraint firstAttribute="bottom" secondItem="fKe-bj-KJ4" secondAttribute="bottom" constant="5" id="gfc-Pl-Wlp"/>
+                    <constraint firstItem="iaa-2d-SXt" firstAttribute="top" secondItem="fKe-bj-KJ4" secondAttribute="bottom" constant="4" id="ave-YS-wTe"/>
+                    <constraint firstItem="iaa-2d-SXt" firstAttribute="leading" secondItem="i0S-PK-zVi" secondAttribute="trailing" constant="15" id="mil-Ai-Z3q"/>
                     <constraint firstItem="i0S-PK-zVi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="mob-Br-sJj"/>
-                    <constraint firstItem="fKe-bj-KJ4" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="omD-hd-8U0"/>
-                    <constraint firstItem="fKe-bj-KJ4" firstAttribute="leading" secondItem="i0S-PK-zVi" secondAttribute="trailing" constant="20" id="t4u-8R-GIx"/>
+                    <constraint firstItem="fKe-bj-KJ4" firstAttribute="leading" secondItem="i0S-PK-zVi" secondAttribute="trailing" constant="15" id="vUd-Ua-eNN"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="artistName" destination="iaa-2d-SXt" id="nwe-o2-iQX"/>
+                <outlet property="trackImage" destination="i0S-PK-zVi" id="2qh-Vw-xhK"/>
+                <outlet property="trackName" destination="fKe-bj-KJ4" id="dks-gy-Z8E"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
         </tableViewCell>
     </objects>

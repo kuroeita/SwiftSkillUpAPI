@@ -9,7 +9,11 @@
 import UIKit
 
 class SongTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var trackImage: UIImageView!
+    @IBOutlet weak var trackName: UILabel!
+    @IBOutlet weak var artistName: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,11 @@ class SongTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+
+    func setup(set: Result) {
+        trackName.text = set.trackName
+        artistName.text = set.artistName
     }
     
 }
