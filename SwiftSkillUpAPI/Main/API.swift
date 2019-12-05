@@ -19,10 +19,14 @@ struct NestTitle: Codable {
 struct Result: Codable {
     var artistName: String
     var trackName: String
+    var artworkUrl100: URL
+    var previewUrl: URL
 
-    init(_ artist: String, _ track: String) {
+    init(_ artist: String, _ track: String, _ image: URL, _ preview: URL) {
         self.artistName = artist
         self.trackName = track
+        self.artworkUrl100 = image
+        self.previewUrl = preview
     }
 }
 //
@@ -63,6 +67,8 @@ extension ITunesAPI: TargetType {
             params["term"] = request
             params["lang"] = "ja_jp"
             params["country"] = "JP"
+            params["limit"] = 9999
+
             //searchInformationはKey/valueをみるところ/パラメーター
 
             return .requestParameters(parameters: params, encoding: URLEncoding.default)

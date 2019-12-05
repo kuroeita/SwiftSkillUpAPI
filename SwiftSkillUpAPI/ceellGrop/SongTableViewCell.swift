@@ -28,6 +28,34 @@ class SongTableViewCell: UITableViewCell {
     func setup(set: Result) {
         trackName.text = set.trackName
         artistName.text = set.artistName
+//        let urlString = "\(set.artworkUrl100)"
+//        let urlRequest = NSURLRequest(URL: NSURL(string: urlString))
+//        trackImage = urlRequest
+
+        trackImage.setImageByDefault(with: set.artworkUrl100)
+
+
     }
-    
 }
+
+extension UIImageView {
+
+    func setImageByDefault(with url: URL) {
+
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            // Success
+            if error == nil, case .some(let result) = data, let image = UIImage(data: result) {
+                DispatchQueue.main.async {
+                    self?.image = image
+                }
+//                self?.image = image
+            // Failure
+            } else {
+                // error handling
+
+            }
+        }.resume()
+    }
+
+}
+

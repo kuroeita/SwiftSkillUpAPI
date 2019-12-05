@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qbx-Hy-hEg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+    </dependencies>
+    <scenes>
+        <!--AV Player View Controller-->
+        <scene sceneID="N4o-tx-TKP">
+            <objects>
+                <avPlayerViewController storyboardIdentifier="SoundPlayerViewController" videoGravity="AVLayerVideoGravityResizeAspect" id="Qbx-Hy-hEg" customClass="SoundPlayerViewController" customModule="SwiftSkillUpAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="ARO-ye-hno"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D36-45-ua4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="157"/>
+        </scene>
+    </scenes>
+</document>
